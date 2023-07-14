@@ -9,6 +9,17 @@ import iconArrow2 from '@assets/scooter/arrow2.svg'
 import imgScooty from '@assets/scooter/scooty.png'
 import imgScooty2 from '@assets/scooter/scooty2.png'
 import imgScooty3 from '@assets/scooter/scooty3.png'
+import imgScooty4 from '@assets/scooter/scooty4.png'
+import imgScooty5 from '@assets/scooter/scooty5.png'
+import imgScooty6 from '@assets/scooter/scooty6.png'
+import scootyG1 from '@assets/scooter/scootyG1.png'
+import scootyG2 from '@assets/scooter/scootyG2.png'
+import scootyG3 from '@assets/scooter/scootyG3.png'
+import scootyG4 from '@assets/scooter/scootyG4.png'
+import scootyGr from '@assets/scooter/imageGr.png'
+import scootyBl from '@assets/scooter/imageBl.png'
+import scootyBk from '@assets/scooter/imageBk.png'
+import scootyRe from '@assets/scooter/imageRe.png'
 import { Image } from 'astro:assets'
 
 const features = [
@@ -51,6 +62,25 @@ const productInfo = [
 	'Plug n play',
 	'Quick release adapter',
 	'RFID key card',
+]
+const productInfo2 = [
+	'Material : Aluminium alloy',
+	'Color : Black',
+	'Capacity : 45lbs',
+	'Ease : Steady & adjustable',
+]
+const productInfo3 = [
+	'Material : Aluminium alloy',
+	'Color : Black',
+	'Capacity : 45lbs',
+	'Ease : Quick & adjustable',
+]
+
+const imageRgbs: [ImageMetadata, string][] = [
+	[scootyGr, 'text-green-200'],
+	[scootyBl, 'text-sky-200'],
+	[scootyBk, 'text-zinc-600'],
+	[scootyRe, 'text-red-200'],
 ]
 ---
 
@@ -174,16 +204,17 @@ const productInfo = [
 			}
 		</section>
 
-		<section class="__product w-[1440px] mx-auto px-[50px] flex flex-col gap-36 items-between relative">
+		<section
+			class="__product w-[1440px] mx-auto px-[50px] flex flex-col gap-28 items-between relative"
+		>
 			<aside class="w-full flex flex-col gap-8 items-center">
 				<h2 class="text-5xl font-bold text-sgray-200">Product Information</h2>
 				<p class="text-xl">Our Scooter has following unique design and technology features:</p>
 			</aside>
 			<main class="flex flex-row">
-
-			<div class="mr-auto -mt-32 -ml-[50px]">
-				<Image src={imgScooty2} alt="scooter product info showcase" />
-			</div>
+				<div class="mr-auto -mt-32 -ml-[50px]">
+					<Image src={imgScooty2} alt="scooter product info showcase" />
+				</div>
 				<ul class="flex flex-col gap-8">
 					{
 						productInfo.map((pi) => (
@@ -198,8 +229,147 @@ const productInfo = [
 
 		<section class="__feature w-[1440px] mx-auto px-[50px] flex flex-col gap-8 items-center">
 			<h2 class="text-5xl">High Efficiency Motor</h2>
-			<p class="text-xl">More torque for powerful riding with 22% maximum hill climbing capability.</p>
-			<Image class="-mt-8 -mx-16" src={imgScooty3} alt="high efficiency motor dissasembled view"/>
+			<p class="text-xl">
+				More torque for powerful riding with 22% maximum hill climbing capability.
+			</p>
+			<Image class="-mt-8 -mx-16" src={imgScooty3} alt="high efficiency motor dissasembled view" />
+		</section>
+
+		<section class="__product w-[1440px] mx-auto px-[50px] flex flex-col gap-28 items-center">
+			<aside class="w-full flex flex-col gap-8 items-center">
+				<h2 class="text-5xl font-bold">Multiple Accessories</h2>
+				<p class="text-xl">There are multiple modes for the scooter for your multiple needs.</p>
+			</aside>
+			<div class="w-full flex flex-row justify-between">
+				<ul class="flex flex-col gap-8">
+					<h2 class="text-5xl font-bold">Golf Bag Rock</h2>
+					{
+						productInfo2.map((pi) => (
+							<li class="bg-[url('scooter/list-mark.svg')] bg-no-repeat bg-contain leading-9 pl-10">
+								{pi}
+							</li>
+						))
+					}
+				</ul>
+				<div class="-mt-20 -mr-[50px]">
+					<Image src={imgScooty4} alt="scooter product info showcase" />
+				</div>
+			</div>
+			<div class="w-full flex flex-row justify-between">
+				<div class="-mt-16 -ml-[50px]">
+					<Image src={imgScooty5} alt="scooter product info showcase" />
+				</div>
+				<ul class="flex flex-col gap-8">
+					<h2 class="text-5xl font-bold">Shopping Rack</h2>
+					{
+						productInfo3.map((pi) => (
+							<li class="bg-[url('scooter/list-mark.svg')] bg-no-repeat bg-contain leading-9 pl-10">
+								{pi}
+							</li>
+						))
+					}
+				</ul>
+			</div>
+			<button class="border-2 -mt-16 rounded-xl basis-0 p-8 text-2xl font-bold border-sgray-200"
+				>More Accessories Coming Soon</button
+			>
+		</section>
+
+		<section class="__product w-[1440px] mx-auto px-[50px] flex flex-col gap-28 items-center">
+			<aside class="w-full flex flex-col gap-8 items-center">
+				<h2 class="text-5xl font-bold">Gallery</h2>
+				<p class="text-xl">
+					View gallery of our products and make yourself satisfied with our creation.
+				</p>
+			</aside>
+
+			<div class="flex flex-row justify-between w-full">
+				<flex class="flex flex-col mt-8 gap-8">
+					<div class="relative">
+						<a class="text-3xl absolute top-6 left-6 font-bold w-min" href="battery"
+							>Scooter Battery</a
+						>
+						<Image
+							class="object-cover h-[490px] w-[640px]"
+							src={scootyG1}
+							width="640"
+							height="490"
+							alt="Scooter Battery"
+						/>
+					</div>
+					<div class="relative">
+						<a class="text-3xl absolute top-6 left-6 font-bold w-min" href="battery"
+							>Idk 3rd Quality</a
+						>
+						<Image
+							class="object-cover h-[490px] w-[640px]"
+							src={scootyG2}
+							width="640"
+							height="490"
+							alt="Scooter Battery"
+						/>
+					</div>
+				</flex>
+				<flex class="flex flex-col gap-8">
+					<div class="relative">
+						<a class="text-3xl absolute top-6 left-6 font-bold w-min" href="battery"
+							>Built Quality</a
+						>
+						<Image
+							class="object-cover h-[490px] w-[640px]"
+							src={scootyG3}
+							width="640"
+							height="490"
+							alt="Scooter Battery"
+						/>
+					</div>
+					<div class="relative">
+						<a class="text-3xl absolute top-6 left-6 font-bold w-min" href="battery">Spare Parts</a>
+						<Image
+							class="object-cover h-[490px] w-[640px]"
+							src={scootyG4}
+							width="640"
+							height="490"
+							alt="Scooter Battery"
+						/>
+					</div>
+				</flex>
+			</div>
+		</section>
+
+		<section class="__product h-screen relative">
+			<Image
+				class="absolute inset-0 inset-y-48 -z-10 object-cover h-[840px] w-full"
+				src={imgScooty6}
+				alt="full screen scooter display"
+			/>
+			<div
+				class="w-[1440px] h-full flex flex-col gap-28 mx-auto px-[50px] items-center justify-between"
+			>
+				<aside class="w-full flex flex-col gap-8 items-center">
+					<h2 class="text-5xl font-bold">Colors</h2>
+					<p class="text-xl">Checkout our products colors.</p>
+				</aside>
+
+				<div class="flex flex-row justify-between w-full">
+					{
+						imageRgbs.map(([image, color], index) => (
+							<div class="relative w-72 h-72 rounded-xl overflow-clip">
+								<Image
+									class="absolute inset-0 h-full w-full object-cover"
+									src={image}
+									alt={`${image.src} scooter colored image`}
+								/>
+								<span
+									class={`absolute bottom-2 right-2 text-[80px] leading-none font-bold ${color}`}
+								>
+									0{index + 1}
+								</span>
+							</div>
+						))
+					}
+				</div>
+			</div>
 		</section>
 
 		<footer class="h-32 bg-gray-500 w-full"></footer>
