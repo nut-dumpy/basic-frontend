@@ -6,12 +6,17 @@ import iconLogo from '@assets/scooter/logo.svg'
 import iconPlay from '@assets/scooter/play button.svg'
 import iconArrow from '@assets/scooter/arrow.svg'
 import iconArrow2 from '@assets/scooter/arrow2.svg'
+import iconStars from '@assets/scooter/stars.svg'
+import iconFacebook from '@assets/scooter/facebook.svg'
+import iconInstagram from '@assets/scooter/instagramm.svg'
+import iconTwitter from '@assets/scooter/twitter.svg'
 import imgScooty from '@assets/scooter/scooty.png'
 import imgScooty2 from '@assets/scooter/scooty2.png'
 import imgScooty3 from '@assets/scooter/scooty3.png'
 import imgScooty4 from '@assets/scooter/scooty4.png'
 import imgScooty5 from '@assets/scooter/scooty5.png'
 import imgScooty6 from '@assets/scooter/scooty6.png'
+import imgScooty7 from '@assets/scooter/scooty7.png'
 import scootyG1 from '@assets/scooter/scootyG1.png'
 import scootyG2 from '@assets/scooter/scootyG2.png'
 import scootyG3 from '@assets/scooter/scootyG3.png'
@@ -20,6 +25,9 @@ import scootyGr from '@assets/scooter/imageGr.png'
 import scootyBl from '@assets/scooter/imageBl.png'
 import scootyBk from '@assets/scooter/imageBk.png'
 import scootyRe from '@assets/scooter/imageRe.png'
+import imgAvatar1 from '@assets/scooter/avatar1.png'
+import imgAvatar2 from '@assets/scooter/avatar2.png'
+import imgAvatar3 from '@assets/scooter/avatar3.png'
 import { Image } from 'astro:assets'
 
 const features = [
@@ -81,6 +89,27 @@ const imageRgbs: [ImageMetadata, string][] = [
 	[scootyBl, 'text-sky-200'],
 	[scootyBk, 'text-zinc-600'],
 	[scootyRe, 'text-red-200'],
+]
+
+const testimonials = [
+	{
+		author: 'Serhiy Hipskyy',
+		position: 'CEO Universal',
+		avatar: imgAvatar1,
+		text: `On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure.`,
+	},
+	{
+		author: 'Justus Menke',
+		position: 'CEO Eronaman',
+		avatar: imgAvatar2,
+		text: `Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus.`,
+	},
+	{
+		author: 'Britain Eriksen',
+		position: 'CEO Universal',
+		avatar: imgAvatar3,
+		text: `At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores.`,
+	},
 ]
 ---
 
@@ -144,7 +173,7 @@ const imageRgbs: [ImageMetadata, string][] = [
 			<p class="text-lg">Simple and sleek design with users in mind.</p>
 
 			<div class="flex flex-row gap-8 items-center mt-auto">
-				<button class="flex flex-rowitems-center group shadow-sm hover:shadow">
+				<button class="flex flex-row items-center group shadow-sm hover:shadow">
 					<span
 						class="flex justify-center w-[58px] h-[58px] transition bg-sgray-200 group-hover:bg-sgray-100"
 					>
@@ -212,7 +241,7 @@ const imageRgbs: [ImageMetadata, string][] = [
 				<p class="text-xl">Our Scooter has following unique design and technology features:</p>
 			</aside>
 			<main class="flex flex-row">
-				<div class="mr-auto -mt-32 -ml-[50px]">
+				<div class="mr-auto -mt-24 -ml-[50px]">
 					<Image src={imgScooty2} alt="scooter product info showcase" />
 				</div>
 				<ul class="flex flex-col gap-8">
@@ -337,21 +366,21 @@ const imageRgbs: [ImageMetadata, string][] = [
 			</div>
 		</section>
 
-		<section class="__product h-screen relative">
+		<section class="__product relative">
 			<Image
-				class="absolute inset-0 inset-y-48 -z-10 object-cover h-[840px] w-full"
+				class="absolute inset-0 inset-y-48 -z-10 object-cover h-[873px] w-full"
 				src={imgScooty6}
 				alt="full screen scooter display"
 			/>
-			<div
-				class="w-[1440px] h-full flex flex-col gap-28 mx-auto px-[50px] items-center justify-between"
-			>
+			<div class="w-[1440px] flex flex-col gap-28 mx-auto px-[50px] items-center justify-between">
 				<aside class="w-full flex flex-col gap-8 items-center">
 					<h2 class="text-5xl font-bold">Colors</h2>
 					<p class="text-xl">Checkout our products colors.</p>
 				</aside>
 
-				<div class="flex flex-row justify-between w-full">
+				<div class="__empty h-[873px] -mt-7 w-full bg-none"></div>
+
+				<div class="flex flex-row -mt-64 justify-between w-full">
 					{
 						imageRgbs.map(([image, color], index) => (
 							<div class="relative w-72 h-72 rounded-xl overflow-clip">
@@ -372,7 +401,136 @@ const imageRgbs: [ImageMetadata, string][] = [
 			</div>
 		</section>
 
-		<footer class="h-32 bg-gray-500 w-full"></footer>
+		<section class="__testimonials bg-sgray-800">
+			<div class="w-[1440px] mx-auto flex flex-col py-20 items-center gap-10">
+				<h2 class="font-bold text-5xl">Testimonials</h2>
+				<div class="flex flex-row gap-9">
+					{
+						testimonials.map((testy) => (
+							<div class="w-[360px] h-96 py-12 px-8 flex flex-col justify-between items-center bg-sgray-900 shadow border border-sgray-800">
+								<div class="flex flex-col gap-3">
+									<img class="h-4" src={iconStars.src} height="16" alt="rating level 5" />
+									<p class="text-xl text-center">{testy.text}</p>
+								</div>
+								<div class="flex flex-row gap-4 items-center">
+									<Image
+										class="rounded-full h-12 w-12 object-cover"
+										src={testy.avatar}
+										alt={`avatr person ${testy.author}`}
+										height="96"
+									/>
+									<div class="flex flex-col gap-1">
+										<>
+											<span class="font-medium">{testy.author}</span>
+											<span class="text-sgray-300">{testy.position}</span>
+										</>
+									</div>
+								</div>
+							</div>
+						))
+					}
+				</div>
+				<div class="flex flex-row gap-6">
+					<button
+						class="group shadow-sm hover:shadow rounded-full h-11 w-11 flex justify-center items-center bg-sgray-800 border border-sgray-200"
+					>
+						<svg
+							class="stroke-sgray-200 rotate-180 transition translate-x-1 group-hover:translate-x-0"
+							width="16"
+							height="10"
+							viewBox="0 0 16 10"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path d="M1 5H15M15 5L11 1M15 5L11 9" stroke-linecap="round" stroke-linejoin="round"
+							></path>
+						</svg>
+					</button>
+					<button
+						class="group shadow-sm hover:shadow rounded-full h-11 w-11 flex justify-center items-center bg-sgray-200 border border-sgray-200"
+					>
+						<svg
+							class="stroke-sgray-800 transition -translate-x-1 group-hover:translate-x-0"
+							width="16"
+							height="10"
+							viewBox="0 0 16 10"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path d="M1 5H15M15 5L11 1M15 5L11 9" stroke-linecap="round" stroke-linejoin="round"
+							></path>
+						</svg>
+					</button>
+				</div>
+			</div>
+		</section>
+
+		<section class="__subscrible flex flex-col mx-auto my-12 gap-3">
+			<h2 class="text-5xl font-bold">Subscribe To Newsletter</h2>
+			<p class="text-xl">Subscribe to our newsletter to get amazing offers in future.</p>
+			<div class="flex flex-row mt-12 rounded-xl overflow-clip">
+				<input
+					type="text"
+					class="grow bg-sgray-800 py-7 px-9 text-xl text-sgray-200 placeholder:text-sgray-300"
+					placeholder="Enter your email."
+				/>
+				<button class="bg-sgray-200 text-sgray-900 px-9 py-7">Get started</button>
+			</div>
+		</section>
+
+		<footer
+			class="__footer flex flex-col bg-sgray-200 w-full items-center text-sgray-800 gap-4 pt-24 pb-8"
+		>
+			<flex class="w-full flex flex-row gap-24">
+				<Image class="-mt-48" src={imgScooty7} alt="scooter image footer" />
+				<div class="flex flex-col gap-8">
+					<h3 class="font-bold text-2xl">About</h3>
+					<ul class="flex flex-col gap-6">
+						{
+							['Company', 'Teams', 'Profile', 'Careers'].map((link) => (
+								<li>
+									<a href={`#${link}`}>{link}</a>
+								</li>
+							))
+						}
+					</ul>
+				</div>
+				<div class="flex flex-col gap-8 text-sgray-800">
+					<h3 class="font-bold text-2xl">Resources</h3>
+					<ul class="flex flex-col gap-6">
+						{
+							['Contact', 'Application', 'FQA Features'].map((link) => (
+								<li>
+									<a href={`#${link}`}>{link}</a>
+								</li>
+							))
+						}
+					</ul>
+				</div>
+				<div class="flex flex-col gap-8 text-sgray-800">
+					<h3 class="font-bold text-2xl">Legals</h3>
+					<ul class="flex flex-col gap-6">
+						{
+							['Copyright Privacy', 'Policy Disclaimer', 'Terms'].map((link) => (
+								<li>
+									<a href={`#${link}`}>{link}</a>
+								</li>
+							))
+						}
+					</ul>
+					<ul class="flex flex-row gap-4">
+						{
+							[iconFacebook, iconInstagram, iconTwitter].map((icon) => (
+								<li>
+									<img src={icon.src} alt="social icon" />
+								</li>
+							))
+						}
+					</ul>
+				</div>
+			</flex>
+			<p>© Copyright 2021. All rights reserved.</p>
+		</footer>
 
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
