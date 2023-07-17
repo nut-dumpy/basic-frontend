@@ -1,0 +1,17 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  keywords?: string;
+}
+
+const { title, description, keywords } = Astro.props;
+---
+
+<>
+  <title>{title}</title>
+  <meta property="og:title" content={title} />
+  <meta name="description" content={description} />
+  <meta name="og:description" content={description} />
+  {keywords && <meta name="keywords" content={keywords} />}
+</>

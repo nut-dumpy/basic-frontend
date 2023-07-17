@@ -1,0 +1,22 @@
+---
+export interface Props {
+	type?: 'primary' | 'secondary' | 'tretiary'
+	size?: 'md'
+	class?: string
+}
+
+const { type = 'secondary', size = 'md', class: className = '' } = Astro.props
+
+const typeClasses: { [key in NonNullable<Props['type']>]: string } = {
+	primary: 'bg-fp-500 text-white',
+	secondary: 'bg-fp-100 text-white',
+	tretiary: 'bg-white text-fp-500',
+}
+const sizeClasses: { [key in NonNullable<Props['size']>]: string } = {
+	md: 'text-xs',
+}
+---
+
+<button class={`rounded-full py-1 px-2.5 ${sizeClasses[size]} ${typeClasses[type]} ${className}`}>
+	<slot />
+</button>

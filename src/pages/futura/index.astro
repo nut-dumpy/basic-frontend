@@ -1,0 +1,351 @@
+---
+import { Meta, Button } from '@/components'
+
+// import deadboi from '@/assets/futura/deadboi.svg'
+// import arrowLeft from '@/assets/futura/arrow-left.svg'
+import logoSmol from '@/assets/futura/logo-smol.svg'
+import imgHero from '@/assets/futura/hero-sm.png'
+import imgTeam from '@/assets/futura/team.png'
+import imgClient from '@/assets/futura/client.jpg'
+import imgBlog from '@/assets/futura/blog.jpg'
+import feature1 from '@/assets/futura/feature1.svg'
+import feature2 from '@/assets/futura/feature2.svg'
+import feature3 from '@/assets/futura/feature3.svg'
+import cologo1 from '@/assets/futura/Company logo.svg'
+import cologo2 from '@/assets/futura/Company logo-1.svg'
+import cologo3 from '@/assets/futura/Company logo-2.svg'
+import cologo4 from '@/assets/futura/Company logo-3.svg'
+import cologo5 from '@/assets/futura/Company logo-4.svg'
+import cologoS1 from '@/assets/futura/logo2/Company logo.svg'
+import cologoS2 from '@/assets/futura/logo2/Company logo-1.svg'
+import cologoS3 from '@/assets/futura/logo2/Company logo-2.svg'
+import cologoS4 from '@/assets/futura/logo2/Company logo-3.svg'
+import cologoS5 from '@/assets/futura/logo2/Company logo-4.svg'
+import { Image } from 'astro:assets'
+
+const features = [
+	{
+		title: 'Cutting-Edge Innovation',
+		text: `Experience groundbreaking technological advancements that push the boundaries of what's possible, revolutionizing industries and transforming the way we live and work.`,
+		icon: feature1,
+	},
+	{
+		title: 'Seamless Connectivity',
+		text: `Stay connected anytime, anywhere with our robust and reliable network infrastructure, ensuring uninterrupted communication and effortless access to the digital world.`,
+		icon: feature2,
+	},
+	{
+		title: 'Intuitive User Interface',
+		text: `Enjoy a seamless and intuitive user experience with our sleek and user-friendly interface, designed to simplify complex tasks and enhance productivity.`,
+		icon: feature3,
+	},
+]
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<Meta title="Future Spheres | demo landing page" description="idk cool shiny purple design" />
+	</head>
+	<body class="flex w-full flex-col items-center justify-center py-8 px-2 font-fh gap-12">
+		<section class="__header flex flex-col gap-4 items-center justify-center">
+			<nav
+				class="__nav w-full px-3 py-1.5 flex flex-row rounded-full bg-fp-100 items-center justify-between"
+			>
+				<img class="h-[13px]" src={logoSmol.src} alt="logo futura stuffs smol ver" height="13" />
+				<svg
+					class="stroke-fp-500"
+					width="24"
+					height="24"
+					viewBox="0 0 24 24"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<path
+						d="M3 12H15M3 6H21M3 18H21"
+						stroke="#7F56D9"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"></path>
+				</svg>
+			</nav>
+
+			<section class="__hero w-full flex flex-col gap-2 items-center">
+				<h1 class="text-fp-100 font-medium text-center text-2xl">
+					Revolutionizing the Future with Cutting-Edge Technology
+				</h1>
+				<p class="text-fp-400 text-xs">Empowering Innovation for a Digital Tomorrow</p>
+
+				<div class="flex flex-row gap-4 justify-center">
+					<Button>Signup</Button>
+					<Button type="primary">Contact Us</Button>
+				</div>
+			</section>
+
+			<Image src={imgHero} alt="pretty heroic and stuff image" />
+		</section>
+
+		<section
+			class="__stats text-fp-500 px-12 w-full py-4 text-center flex flex-col gap-2 rounded-2xl bg-white border border-slate-100 stroke-slate-100"
+		>
+			<div>
+				<p class="text-xl">50K</p>
+				<h3>New users per month</h3>
+			</div>
+			<svg
+				width="210"
+				height="2"
+				viewBox="0 0 210 2"
+				fill="none"
+				xmlns="http://www.w3.org/2000/svg"
+			>
+				<path d="M1 1L209 1" stroke-linecap="round"></path>
+			</svg>
+			<div>
+				<p class="text-xl">150K</p>
+				<h3>Active Users</h3>
+			</div>
+			<svg
+				width="210"
+				height="2"
+				viewBox="0 0 210 2"
+				fill="none"
+				xmlns="http://www.w3.org/2000/svg"
+			>
+				<path d="M1 1L209 1" stroke-linecap="round"></path>
+			</svg>
+			<div>
+				<p class="text-xl">98%</p>
+				<h3>Satisfied Customers</h3>
+			</div>
+		</section>
+
+		<section class="__features flex flex-col gap-6">
+			<section class="flex flex-col gap-2 items-center text-center">
+				<span
+					class="py-1 px-5 text-xs text-fp-500 block rounded-full border border-purple-200 bg-gradient-to-r from-purple-100 from-[-100%] to-[200%]"
+					>Features</span
+				>
+				<h2 class="text-2xl text-fp-100 font-medium">Discover the Tools that Drive Success</h2>
+				<p class="text-xs text-fp-400 font-ft">
+					Unleash innovation and accelerate growth with our dynamic product.
+				</p>
+			</section>
+
+			<main
+				class="flex flex-col items-center rounded-2xl bg-white border border-slate-100 gap-7 p-2 stroke-slate-100 text-center"
+			>
+				{
+					features.map((f, i) => (
+						<>
+							<div class="flex flex-col items-center p-5 gap-4 from-fp-900 to-[50%] bg-[radial-gradient(var(--tw-gradient-stops))]">
+								<img src={f.icon.src} alt={`feature ${f.title} icon`} />
+								<h2 class="font-medium text-2xl text-fp-100">{f.title}</h2>
+								<p class="font-ft text-fp-400">{f.text}</p>
+							</div>
+							{i !== features.length - 1 && (
+								<svg
+									class="w-11/12"
+									width="210"
+									height="2"
+									viewBox="0 0 210 2"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<path d="M1 1L209 1" stroke-linecap="round" />
+								</svg>
+							)}
+						</>
+					))
+				}
+			</main>
+		</section>
+		<section
+			class="flex flex-col w-full items-left rounded-2xl bg-white border border-slate-100 gap-9 p-4 stroke-slate-100"
+		>
+			<main class="flex flex-col gap-2 items-start">
+				<span
+					class="py-1 px-5 text-xs text-fp-500 block rounded-full border border-purple-200 bg-gradient-to-r from-purple-100 from-[-100%] to-[200%]"
+					>Our Mission Statement</span
+				>
+				<Image
+					class="rounded-3xl"
+					src={imgTeam}
+					alt="stock team photo of future spheres stock people"
+				/>
+				<h3 class="text-xl text-fp-100 tracking-tighter">
+					Empowering the world through transformative technology solutions
+				</h3>
+				<p class="font-ft text-xs text-fp-400">
+					We are dedicated to empowering individuals, businesses, and communities by providing
+					innovative and cutting-edge technology solutions that unlock new possibilities and drive
+					positive change. Our mission is to make technology accessible, reliable, and impactful,
+					enabling our customers to thrive in the digital era and shape a better future for all.
+				</p>
+			</main>
+			<aside class="flex flex-row gap-4 items-center">
+				<Button class="-ml-2.5" type="tretiary">Sign up</Button>
+				<Button type="primary">Contact us</Button>
+			</aside>
+		</section>
+
+		<section class="__clients flex flex-col items-center gap-6">
+			<main class="flex flex-col items-center gap-2.5 text-center">
+				<span
+					class="py-1 mb-2.5 px-5 text-xs text-fp-500 block rounded-full border border-purple-200 bg-gradient-to-r from-purple-100 from-[-100%] to-[200%]"
+				>
+					Our Clients
+				</span>
+				<h3 class="text-2xl text-fp-100 font-medium">Trusted by Industry Leaders</h3>
+				<p class="text-fp-400 font-ft text-xs">
+					Join our roster of satisfied clients and experience the exceptional results and service
+					that have earned us the trust of industry leaders worldwide
+				</p>
+			</main>
+			<aside class="flex flex-row justify-between flex-wrap gap-2.5">
+				{
+					[cologo1, cologo2, cologo3, cologo4, cologo5].map((logo, i) => (
+						<img class="last:mx-auto" src={logo.src} alt={`logo logo-${i}`} />
+					))
+				}
+			</aside>
+		</section>
+
+		<section class="__clients flex flex-col items-center gap-4">
+			<span
+				class="py-1 mb-2.5 px-5 text-xs text-fp-500 block rounded-full border border-purple-200 bg-gradient-to-r from-purple-100 from-[-100%] to-[200%]"
+			>
+				Our Clients
+			</span>
+			<h2 class="text-center text-fp-100 font-medium text-2xl">1M+ Global Customers</h2>
+
+			<main class="flex flex-col border border-slate-100 rounded-2xl p-2 gap-4">
+				<Image
+					class="rounded-2xl h-[335px] object-cover"
+					src={imgClient}
+					alt="profile shot of Sarah Thompson"
+					height="335"
+				/>
+				<p class="text-fp-400">
+					I am incredibly impressed with the transformative technology solutions provided by
+					FutureSphere. Their cutting-edge innovations have revolutionized our business operations,
+					streamlining processes and boosting productivity. The seamless connectivity and intuitive
+					user interface have made a significant impact on our team's efficiency. Thanks to their
+					advanced data analytics capabilities, we now make data-driven decisions with confidence. I
+					highly recommend FutureSphere to any organization seeking to stay ahead in the digital
+					era.
+				</p>
+				<p class="flex flex-col gap-1 text-fp-100">
+					<span>Sarah Thompson</span>
+					<span>CEO Thompson Enterprises</span>
+				</p>
+				<div class="flex flex-row gap-2.5 ml-auto">
+					<button
+						class="w-6 h-6 rounded-full border bg-white stroke-fp-700 border-fp-700 items-center justify-center flex"
+					>
+						<svg
+							class="rotate-180"
+							width="13"
+							height="12"
+							viewBox="0 0 13 12"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path d="M7 1L12 5.99995L7 10.9999M11.5333 5.99995H0" stroke-width="0.833579"></path>
+						</svg>
+					</button>
+					<button
+						class="w-6 h-6 rounded-full border bg-fp-700 stroke-white border-fp-700 items-center justify-center flex"
+					>
+						<svg
+							width="13"
+							height="12"
+							viewBox="0 0 13 12"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path d="M7 1L12 5.99995L7 10.9999M11.5333 5.99995H0" stroke-width="0.833579"></path>
+						</svg>
+					</button>
+				</div>
+			</main>
+		</section>
+
+		<section class="__trusted w-full flex flex-col gap-3">
+			<div class="flex flex-row gap-5 overflow-clip items-center">
+				<svg
+					class="grow-0 shrink"
+					width="103"
+					height="1"
+					viewBox="0 0 103 1"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<path
+						d="M-413 0.5L102 0.499955"
+						stroke="black"
+						stroke-opacity="0.5"
+						stroke-linecap="round"></path>
+				</svg>
+				<h3 class="w-max flex-none text-fp-400 text-xs font-ft">Trusted by</h3>
+				<svg
+					class="grow-0 shrink"
+					width="103"
+					height="1"
+					viewBox="0 0 103 1"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<path
+						d="M-413 0.5L102 0.499955"
+						stroke="black"
+						stroke-opacity="0.5"
+						stroke-linecap="round"></path>
+				</svg>
+			</div>
+			<div class="flex flex-wrap flex-row justify-between">
+				{[cologoS1, cologoS2, cologoS3].map((logo) => <img src={logo.src} alt="company logo" />)}
+			</div>
+			<div class="flex flex-wrap flex-row justify-evenly">
+				{[cologoS4, cologoS5].map((logo) => <img src={logo.src} alt="company logo" />)}
+			</div>
+		</section>
+
+		<section class="__blog flex flex-col items-center gap-4">
+			<span
+				class="py-1 mb-2.5 px-5 text-xs text-fp-500 block rounded-full border border-purple-200 bg-gradient-to-r from-purple-100 from-[-100%] to-[200%]"
+			>
+				Blogs
+			</span>
+			<h2 class="text-center text-fp-100 font-medium text-2xl">From our latest blogs</h2>
+
+			<div class="flex flex-col gap-7 p-5 border border-slate-100 rounded-xl">
+				<Image class="rounded-xl" src={imgBlog} alt="blog post cover" />
+				<div class="flex flex-row gap-2">
+					<span
+						class="py-1 px-2 font-ft text-white rounded-full bg-gradient-to-r from-fp-700 via-fp-700 to-[200%]"
+					>
+						Healthcare
+					</span>
+				</div>
+				<h3 class="text-xl">The Future of AI in Healthcare: Transforming Patient Care</h3>
+				<p class="text-[#8B857F]">
+					Explore the incredible potential of artificial intelligence (AI) in revolutionizing
+					healthcare. Discover how AI-driven technologies are enhancing diagnostics, personalized
+					medicine, and patient outcomes. Dive into real-world examples and gain insights into the
+					future of healthcare.
+					<a class="block text-end text-zinc-400 underline" href="#more">Read more</a>
+				</p>
+			</div>
+		</section>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Manrope&display=swap"
+			rel="stylesheet"
+		/>
+	</body>
+</html>

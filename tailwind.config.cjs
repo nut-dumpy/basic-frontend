@@ -1,4 +1,4 @@
-const colors = require('tailwindcss/colors')
+const a = require('tailwindcss/colors')
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -15,6 +15,18 @@ module.exports = {
 					800: '#FAFAFA',
 					900: '#FFFFFF',
 				},
+				fp: {
+					100: '#1B152B',
+					300: '#39057A',
+					400: '#7A7D9C',
+					500: '#7F56D9',
+					700: '#AD93E7',
+					900: '#EBDBFF',
+				},
+			},
+			fontFamily: {
+				fh: 'Inter,sans',
+				ft: 'Manrope,sans',
 			},
 		},
 	},
