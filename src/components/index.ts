@@ -1,3 +1,1 @@
-export { default as Meta } from "./Meta.astro";
-
-export * from './futura'
+export { default as Meta } from './Meta.astro'
